@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC 113</title>
+    <style>
+        :root {
+            --bg-image: url("https://img.freepik.com/premium-photo/hexagonal-purple-blue-digital-background-great-modern-technology-visuals_548264-15216.jpg?w=2000");
+            --header-gradient: linear-gradient(to right, purple, blue);
+            --card-gradient: linear-gradient(65deg, purple, blue);
+            --text-color: white;
+        }
+
+        body.dark-mode {
+            --bg-image: none;
+            --header-gradient: linear-gradient(to right, #222, #444);
+            --card-gradient: linear-gradient(65deg, #333, #555);
+            --text-color: #eee;
+            background-color: #111;
+        }
+
+        body {
+            background-image: var(--bg-image);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-image: var(--header-gradient);
+            padding: 20px;
+            text-align: center;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .card {
+            width: 320px;
+            margin: 20px;
+            border-radius: 20px;
+            padding: 30px 20px;
+            background-image: var(--card-gradient);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: var(--text-color);
+            animation: fadeInText 3s ease-in-out;
+            text-align: center;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+
+
+        .card-grid {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .card-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .card-content a img {
+            width: 30px;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .card-content a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .card-content a:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #heading-container {
+            text-align: center;
+            animation: fadeInText 2s ease-out;
+        }
+
+        #heading-container h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        .header-img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            &:hover {
+                transform: rotateY(360deg); transition: 3s;
+            }
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <link rel = "icon" href = "https://th.bing.com/th/id/R.787cb7dd27eb30844548715c8b96c440?rik=TbEiWCS34VEiiQ&pid=ImgRaw&r=0.png" type = "image/x-icon">
+</head>
+<body id="webBody">
+    <header>
+        <h2>CSC113</h2>
+        <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+        <img class="header-img" src="https://th.bing.com/th/id/R.f28eb13ec71490cb5a61eede3ec3b0d2?rik=DY3OCBtK7wSYIw&riu=http%3a%2f%2fimages6.fanpop.com%2fimage%2fphotos%2f37700000%2ftransparent-Hiro-big-hero-6-37747465-427-378.png&ehk=9IeUgrMkkuCltjV8fJ4EwBDMKK07VHs4Mw0o6p5wM3k%3d&risl=&pid=ImgRaw&r=0.png"  alt="Hero" title="Hi there!!">
+
+    </header>
+
+    <div id="heading-container">
+        <h1>Group F</h1>
+    </div>
+
+    <div class="card-grid">
+        
+        <div class="card">
+            <img src="Ambesiwe.jpg" alt="Ambesiwe Asiphile Tyikili">
+            <div class="card-content">
+                <h2>Ambesiwe Asiphile Tyikili</h2>
+                <p><b>Majors</b>: Computer Science, BioChem</p>
+                <p><a href="Ambesiwe.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="M.jpg" alt="Masande Qwathekana">
+            <div class="card-content">
+                <h2>Masande Qwathekana</h2>
+                <p><b>Majors</b>:Computer Science,AppliedMAT</p>
+                <p><a href="Masande.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <img src="Auston.jpg" alt="Siwaphiwe Sidiya">
+            <div class="card-content">
+                <h2>Siwaphiwe Sidiya</h2>
+                <p><b>Majors</b>:Computer Science,AppliedMAT</p>
+                <p><a href="Auston.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <img src="yomelela.jpg" alt="Yomelela Mndela">
+            <div class="card-content">
+                <h2>Yomelela Mndela</h2>
+                <p><b>Majors</b>: Computer Science, BioChem</p>
+                <p><a href="Yomelela_Mndela.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="Lusakhanya.jpg" alt="Lusakhanya Zikhwe">
+            <div class="card-content">
+                <h2>Lusakhanya Zikwhe</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Zikhwe.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+        </div>
+        </div>
+            
+        <div class="card">
+            <img src="Khanyile .jpg" alt="Khanyile Madikizela">
+            <div class="card-content">
+                <h2>Khanyile Madikizela</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="khanyile.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="mivuyo s.jpg" alt="Mivuyo Sidyono">
+            <div class="card-content">
+                <h2>Mivuyo Sidyono</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Mivuyo_Sidyono.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+ 
+       <div class="card">
+             <img src="siyamanga.jpg" alt="Syamanga Benene">
+            <div class="card-content">
+                <h2>Syamanga Benene</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Mivuyo.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+
+
+       <div class="card">
+             <img src="ivile.jpg" alt="Mivuyo Duntsa">
+            <div class="card-content">
+                <h2>Mivuyo Duntsa</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Mivuyo.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+        
+
+        <div class="card">
+             <img src="Nelson.jpg" alt="Nelisile Mtshetshe">
+            <div class="card-content">
+                <h2>Nelisile Mtshetshe</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Mivuyo.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+               
+       <div class="card">
+             <img src="carson.jpg" alt="Carson Fritz">
+            <div class="card-content">
+                <h2>Fritz Carson</h2>
+                <p><b>Majors</b>:Computer Science, Applied MAT</p>
+                <p><a href="CFritzTT.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+            
+       <div class="card">
+             <img src="Brandon.jpg" alt="Mlondiwa Brandon">
+            <div class="card-content">
+                <h2>Mlondiwa Brandon</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="mlondiwa.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+            
+       <div class="card">
+             <img src="sisonke.jpg" alt="Sisonke Nyalela">
+            <div class="card-content">
+                <h2>Sisonke Nyalela</h2>
+                <p><b>Majors</b>:Computer Science, BioChem</p>
+                <p><a href="Mivuyo.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+ 
+       <div class="card">
+             <img src="sinethemba.jpg" alt="Sinethemba Qoza">
+            <div class="card-content">
+                <h2>Sinethemba Qoza</h2>
+                <p><b>Majors</b>: CSC, MAT</p>
+                <p><a href="Qoza.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+ 
+       <div class="card">
+             <img src="https://www.pngkit.com/png/full/70-707575_yokai-transparent-yokai-big-hero-6-png.png" alt="Image of Yokai" title = "Did not participate.">
+            <div class="card-content">
+                <h2>Madasa E</h2>
+                <p><b>Majors</b>:</p>
+                <p><a href=""><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+ 
+      <div class="card">
+             <img src="R.png" alt="Siyaxolisa Inga Kabane" title = "So what you think, entertained!?">
+            <div class="card-content">
+                <h2>Siyaxolisa Kabane</h2>
+                <p><b>Majors</b>:Computer Science,Physics</p>
+                <p><a href="Syaxolisa.html"><img src="https://cdn-icons-png.flaticon.com/512/9225/9225508.png" alt="Link"></a></p>
+            </div>
+        </div>
+         
+
+    </div>
+
+
+</body>
+</html>
